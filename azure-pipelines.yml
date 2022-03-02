@@ -12,9 +12,7 @@ steps:
   - task: Npm@1
     displayName: 'npm custom'
     inputs:
-      command: custom
-      verbose: false
-      customCommand: 'install'
+      command: 'install'
   - task: ArchiveFiles@2
     displayName: 'Archive $(Build.SourcesDirectory)'
     inputs:
