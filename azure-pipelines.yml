@@ -17,6 +17,6 @@ jobs:
         - name: Azure Pipelines Action
           uses: Azure/pipelines@v1
           with:
-            azure-devops-project-url: https://dev.azure.com/organization/project-name
-            azure-pipeline-name: 'My Pipeline'
+            azure-devops-project-url: https://codedev.ms/ykholodkov/MyFirstProject
+            azure-pipeline-name: 'MyFirstProject'
             azure-devops-token: ${{ secrets.AZURE_DEVOPS_TOKEN }}
