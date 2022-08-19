@@ -1,22 +1,17 @@
-name: CI
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
 
-# Run this workflow every time a commit gets pushed to main or a pull request gets opened against main
-on:
-  push:
-    branches:
-      - main
-  pull_request:
-    branches: 
-      - main
+trigger:
+- main
 
-jobs:
-    build:
-        name: Call Azure Pipeline
-        runs-on: ubuntu-latest
-        steps:
-        - name: Azure Pipelines Action
-          uses: Azure/pipelines@v1
-          with:
-            azure-devops-project-url: https://codedev.ms/ykholodkov/MyFirstProject
-            azure-pipeline-name: 'MyFirstProject'
-            azure-devops-token: ${{ secrets.AZURE_DEVOPS_TOKEN }}
+pool:
+  name: Default
+stages:
+- stage: Build1
+  jobs:
+    - job:
+      steps:
+      - powershell: Start-Sleep -Seconds 5
+        displayName: 'script 1'
